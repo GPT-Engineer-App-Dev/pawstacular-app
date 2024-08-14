@@ -1,6 +1,11 @@
 import React from 'react';
-import { Paw } from 'lucide-react';
+import { LucideProps } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { Button } from '@/components/ui/button';
+
+const Paw = dynamic(() => import('lucide-react').then((mod) => mod.Paw), {
+  ssr: false,
+}) as React.ComponentType<LucideProps>;
 
 const Index = () => {
   return (
